@@ -3,8 +3,6 @@ var inner = document.querySelector("#mini-cart .cp-dropdown").innerHTML  + dropd
 document.querySelector("#mini-cart .cp-dropdown").innerHTML  = inner
 
 $(".ad-btn-comprar").on("click", function () {
-    var elem = document.querySelector(".progress-bar");
-    elem.style.width = "0%";
     var elem = this.parentNode.parentNode.parentNode
     this.parentNode.parentNode.parentNode.parentNode.classList.add("shopping");
     document.querySelector(".shopping .pull-right").style.display = "flex";
@@ -50,6 +48,8 @@ $(".ad-btn-comprar").on("click", function () {
             document.querySelector(".aviso-comprado").style.display = "none"
         }, 3000);
     }, 2000);
+    var elem = document.querySelector(".progress-bar");
+    elem.style.width = "0%";
 })
 
 
