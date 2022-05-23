@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.product-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-product-card {
+    padding: 0 15px;
+}
+
+.product-card {
+    width: 250px;
+    box-shadow: 1px 7px 20px 0px rgb(51 51 51 / 11%);
+    padding: 5px 10px;
+}
+
+.price {
+    margin-top: 30px;
+}
+
+.button-product-card {
+    margin-top: 10px;
+    transition: linear 250ms;
+}
+
+.button-product-card > button {
+    cursor: pointer;
+    width: 75px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.button-product-card > button.bought {
+    background-color: green;
+    color: white;
+    border: none;
+    display: none;
+}
+
+.button-product-card > button.ad-btn-comprar {
+    display: block;
+}
+
+.tendasmolhadas {
+    display: none;
+    content: "";
+    z-index: 10000;
+    position: absolute;
+    width: 100vw;
+    background-color: #11111182;
+    height: 100vh;
+}
+
+.textteste {
+    width: 200px;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.grid-product-card {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 60px;
+    justify-content: center;
+}
+
+.bgDarkFocus2 {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0 auto;
+    display: none;
+}
+
+#header {
+    z-index: 100000;
+}
+
+.infodescontoSaoPaulo {
+    display: none;
+}
+
+.aviso-comprado {
+    position: absolute;
+    z-index: 100000;
+    right: 50%;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.aviso-comprado .rnk-modal-main{
+    padding: 15px 0;
+}
+
+.aviso-comprado h2 {
+    font-size: 14px;
+}
+
+.aviso-comprado p {
+    font-size: 12px;
+}
+
+.rnk-comp-lista>li>a{
+    display: flex;
+}
+.rnk-comp-lista>li>a>img{
+    margin-right: 15px;
+}
+
+.progress-bar{
+    height: 5px;
+}
