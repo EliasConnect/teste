@@ -37,7 +37,7 @@ $(".ad-btn-comprar").on("click", function () {
         var x=document.querySelector(".cp-dropdown-menu.slide-right.drop-right")
         x.setAttribute('style', `${x.style.cssText} display : none !important;`);
         
-        setInterval(function () {
+        setTimeout(function () {
             document.querySelector(".shopping").style.height = "400px";
             document.querySelector(".shopping").style.display = "none";
             document.querySelector(".cp-dropdown-menu.slide-right.drop-right").style.display = "none"
