@@ -50,6 +50,7 @@ $(".ad-btn-comprar").on("click", function () {
     }, 2000);
     var elem = document.querySelector(".progress-bar");
     elem.style.width = "0%";
+    $(".shopping").removeClass("shopping")
 })
 
 
