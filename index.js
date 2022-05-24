@@ -51,11 +51,11 @@ $(".ad-btn-comprar").on("click", function () {
                 document.querySelector("#header").style.position = "relative";
                 document.querySelector(".bgDarkFocus").style.display = "none";
                 document.querySelector(".aviso-comprado").style.display = "none"
+                $(".shopping").removeClass("shopping")
             }, 3000);
         }, 2000);
         var elem = document.querySelector(".progress-bar");
         elem.style.width = "0%";
-        $(".shopping").removeClass("shopping")
     }
 })
 
