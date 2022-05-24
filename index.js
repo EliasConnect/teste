@@ -10,6 +10,27 @@ $(".ad-btn-comprar").on("click", function () {
         alert("por favor ne irmão seleciona o bagulho");
         $(".shopping").removeClass("shopping")
     } else {
+        var btn = this;
+        // Bruno Oyamada - 17/09/2021
+        // Faz a chamada da validação do botão
+        // Inicio
+
+        let salesId = $(btn).attr('data-product')
+
+        $(btn).addClass('ad-btn-load');
+        $(btn).removeClass('ad-btn-load');
+
+        $(btn).find('span').text(`Adicionado ao carrinho`)
+
+        $(btn).find('i').removeClass(`fa-shopping-cart`)
+        $(btn).find('i').addClass('fa-solid fa-check')
+
+        setTimeout(() => {
+            $(btn).find('span').text('Comprar')
+
+            $(btn).find('i').removeClass('fa-solid fa-check')
+            $(btn).find('i').addClass(`fa-shopping-cart`)
+        }, 3000)
         document.querySelector(".shopping .pull-right").style.display = "flex";
         document.querySelector(".shopping").style.height = "450px";
         setTimeout(function () {
