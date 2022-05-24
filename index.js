@@ -44,7 +44,7 @@ $(".ad-btn-comprar").on("click", function () {
 
             setTimeout(function () {
                 document.querySelector(".shopping").style.height = "400px";
-                document.querySelector(".shopping").style.display = "none";
+                document.querySelector(".shopping .pull-right").style.display = "none";
                 document.querySelector(".cp-dropdown-menu.slide-right.drop-right").style.display = "none"
                 document.querySelector("body").style.marginTop = "0";
                 document.querySelector("body").style.overflow = "auto";
