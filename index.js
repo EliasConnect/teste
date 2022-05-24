@@ -1,7 +1,3 @@
-var dropdown = '<div class="aviso-comprado" style="display: none;"><div id="open-modal-produto-adicionado" class="rnk-comp-modal rnk-comp-modal-navegacao in" tabindex="-1" aria-hidden="false"><div class="col-12"><div class="rnk-modal-main"><div class="rnk-modal-content"><div class="rnk-container-notificacao-produto-adicionado"><div class="text-group"><h2>Produto adicionado ao carrinho</h2><ul class="rnk-comp-lista rnk-comp-lista-produtos-associados"><li> <a href="#"> <img width="50" height="50" src="http://connectparts.vteximg.com.br/arquivos/ids/1653541-450-450/image-220dd2796fcd429ebcd2e58f606758b7.jpg?v=637685971820100000" alt="Capacete Moto Fechado Pro Tork R8 Pro Speed Fosco Vermelho  Tamanho 56"><div><p class="text-truncate">Capacete Moto Fechado Pro Tork R8 Pro Speed Fos...</p><p class="rnk-produto-adicionado-preco-do-produto"><b>R$92,99</b></p></div></a> </li></ul></div></div><div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="4" aria-valuemin="0" aria-valuemax="100"></div></div></div></div></div></div></div>'
-var inner = document.querySelector("#mini-cart .cp-dropdown").innerHTML + dropdown;
-document.querySelector("#mini-cart .cp-dropdown").innerHTML = inner
-
 $(".ad-btn-comprar").on("click", function () {
     this.parentNode.parentNode.parentNode.parentNode.classList.add("shopping");
     var shoppingcard = $(".shopping .variation-list select  :selected").data('id')
@@ -11,11 +7,6 @@ $(".ad-btn-comprar").on("click", function () {
         $(".shopping").removeClass("shopping")
     } else {
         var btn = this;
-        // Bruno Oyamada - 17/09/2021
-        // Faz a chamada da validação do botão
-        // Inicio
-
-        let salesId = $(btn).attr('data-product')
 
         $(btn).addClass('ad-btn-load');
         $(btn).removeClass('ad-btn-load');
@@ -31,6 +22,19 @@ $(".ad-btn-comprar").on("click", function () {
             $(btn).find('i').removeClass('fa-solid fa-check')
             $(btn).find('i').addClass(`fa-shopping-cart`)
         }, 3000)
+
+        var dropdown = '<div class="aviso-comprado" style="display: none;"><div id="open-modal-produto-adicionado" class="rnk-comp-modal rnk-comp-modal-navegacao in" tabindex="-1" aria-hidden="false"><div class="col-12"><div class="rnk-modal-main"><div class="rnk-modal-content"><div class="rnk-container-notificacao-produto-adicionado"><div class="text-group"><h2>Produto adicionado ao carrinho</h2><ul class="rnk-comp-lista rnk-comp-lista-produtos-associados"><li> <a href="#"> <img width="50" height="50" src="'+
+        document.querySelector(".shopping .img-product img").getAttribute('src')
+         +'" alt="'+
+         document.querySelector(".shopping .produto-titulo").getAttribute('title')
+         +'"><div><p class="text-truncate">'+
+         document.querySelector(".shopping .produto-titulo h3").innerHTML
+         +'</p><p class="rnk-produto-adicionado-preco-do-produto"><b>'+
+         document.querySelector(".shopping .valor-por").innerHTML
+         +'</b></p></div></a> </li></ul></div></div><div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="4" aria-valuemin="0" aria-valuemax="100"></div></div></div></div></div></div></div>'
+        var inner = document.querySelector("#mini-cart .cp-dropdown").innerHTML + dropdown;
+        document.querySelector("#mini-cart .cp-dropdown").innerHTML = inner
+
         document.querySelector(".shopping .pull-right").style.display = "flex";
         document.querySelector(".shopping").style.height = "450px";
         setTimeout(function () {
@@ -73,6 +77,7 @@ $(".ad-btn-comprar").on("click", function () {
                 document.querySelector(".bgDarkFocus").style.display = "none";
                 document.querySelector(".aviso-comprado").style.display = "none"
                 $(".shopping").removeClass("shopping")
+                document.querySelector(".aviso-comprado").remove()
             }, 3000);
         }, 2000);
         var elem = document.querySelector(".progress-bar");

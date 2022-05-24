@@ -110,6 +110,7 @@ a{
     right: 50%;
     background-color: #ffffff;
     border-radius: 8px;
+    max-width: 383px;
 }
 
 .aviso-comprado .rnk-modal-main{
@@ -117,11 +118,21 @@ a{
 }
 
 .aviso-comprado h2 {
-    font-size: 14px;
+    font-size: 15px;
+    color: #333333;
+    font-weight: 500;
 }
 
-.aviso-comprado p {
-    font-size: 12px;
+.aviso-comprado p.rnk-produto-adicionado-preco-do-produto {
+    font-size: 18px;
+    color: #333333;
+    font-weight: 700;
+}
+
+.aviso-comprado .text-truncate {
+    font-size: 14px;
+    color: #333333;
+    font-weight: 400;
 }
 
 .rnk-comp-lista>li>a{
@@ -132,5 +143,13 @@ a{
 }
 
 .progress-bar{
+    background-color: #fb5c01!important;
+}
+
+.bg-success{
+    background-color: #28a745!important;
+}
+.progress {
+    background-color: #333;
     height: 5px;
 }
