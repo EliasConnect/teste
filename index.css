@@ -113,6 +113,11 @@ a{
     max-width: 383px;
 }
 
+.aviso-comprado a:hover {
+    color: #333333;
+    text-decoration: none;
+}
+
 .aviso-comprado .rnk-modal-main{
     padding: 15px 0;
 }
@@ -133,6 +138,8 @@ a{
     font-size: 14px;
     color: #333333;
     font-weight: 400;
+    white-space: normal;
+    width: 300px;
 }
 
 .rnk-comp-lista>li>a{
