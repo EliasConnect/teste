@@ -8,6 +8,7 @@ $(".ad-btn-comprar").on("click", function () {
 
     if (shoppingcard == '' || !shoppingcard) {
         alert("por favor ne irmão seleciona o bagulho");
+        $(".shopping").removeClass("shopping")
     } else {
         document.querySelector(".shopping .pull-right").style.display = "flex";
         document.querySelector(".shopping").style.height = "450px";
@@ -54,8 +55,8 @@ $(".ad-btn-comprar").on("click", function () {
         }, 2000);
         var elem = document.querySelector(".progress-bar");
         elem.style.width = "0%";
+        $(".shopping").removeClass("shopping")
     }
-    $(".shopping").removeClass("shopping")
 })
 
 
