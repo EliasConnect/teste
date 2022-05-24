@@ -154,9 +154,13 @@ a{
 }
 
 .bg-success{
-    background-color: #28a745!important;
+    background-color: #fb5c01!important;
 }
 .progress {
     background-color: #333;
-    height: 5px;
+    height: 7px;
+}
+
+.rnk-comp-lista-produtos-associados>li>a>div>p{
+    margin: 0!important;
 }
