@@ -1,17 +1,19 @@
 $(".ad-btn-comprar").on("click", function () {
-    this.parentNode.parentNode.parentNode.parentNode.classList.add("shopping");
+    if(!$(".prateleira-3 ul li").hasClass("shopping")){
+        this.parentNode.parentNode.parentNode.parentNode.classList.add("shopping");
     var shoppingcard = $(".shopping .variation-list select  :selected").data('id')
-
     if (shoppingcard == '' || !shoppingcard) {
-        setTimeout(() => {
-            var mensagem = '<div class="mensagem">Selecione uma opção antes de adicionar o produto ao carrinho<div class="triangle"></div><div class="alert">!</div></div>';
-            const OldContent = document.querySelector(".shopping .variation-list").innerHTML;
-            document.querySelector(".shopping .variation-list").innerHTML = OldContent + mensagem;
-            setTimeout(() =>{
-                document.querySelector(".shopping .variation-list").innerHTML = OldContent 
-                $(".shopping").removeClass("shopping")
-            },3000)
-        }, 1000);
+        if (!$(".mensagem").hasClass("mensagem")) {
+            setTimeout(() => {
+                let mensagem = '<div class="mensagem">Selecione uma opção antes de adicionar o produto ao carrinho<div class="triangle"></div><div class="alert">!</div></div>';
+                let OldContent = document.querySelector(".shopping .variation-list").innerHTML;
+                document.querySelector(".shopping .variation-list").innerHTML = OldContent + mensagem;
+                setTimeout(() => {
+                    document.querySelector(".shopping .variation-list").innerHTML = OldContent
+                    $(".shopping").removeClass("shopping")
+                }, 3000)
+            }, 1000);
+        }
     } else {
         var btn = this;
 
@@ -90,6 +92,7 @@ $(".ad-btn-comprar").on("click", function () {
         var elem = document.querySelector(".progress-bar");
         elem.style.width = "0%";
     }
+}
 })
 
 
