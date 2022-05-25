@@ -3,8 +3,15 @@ $(".ad-btn-comprar").on("click", function () {
     var shoppingcard = $(".shopping .variation-list select  :selected").data('id')
 
     if (shoppingcard == '' || !shoppingcard) {
-        alert("por favor ne irmão seleciona o bagulho");
-        $(".shopping").removeClass("shopping")
+        setTimeout(() => {
+            var mensagem = '<div class="mensagem">Selecione uma opção antes de adicionar o produto ao carrinho<div class="triangle"></div><div class="alert">!</div></div>';
+            const OldContent = document.querySelector(".shopping .variation-list").innerHTML;
+            document.querySelector(".shopping .variation-list").innerHTML = OldContent + mensagem;
+            setTimeout(() =>{
+                document.querySelector(".shopping .variation-list").innerHTML = OldContent 
+                $(".shopping").removeClass("shopping")
+            },3000)
+        }, 1000);
     } else {
         var btn = this;
 
@@ -23,15 +30,15 @@ $(".ad-btn-comprar").on("click", function () {
             $(btn).find('i').addClass(`fa-shopping-cart`)
         }, 3000)
 
-        var dropdown = '<div class="aviso-comprado" style="display: none;"><div id="open-modal-produto-adicionado" class="rnk-comp-modal rnk-comp-modal-navegacao in" tabindex="-1" aria-hidden="false"><div class="col-12"><div class="rnk-modal-main"><div class="rnk-modal-content"><div class="rnk-container-notificacao-produto-adicionado"><div class="text-group"><h2>Produto adicionado ao carrinho</h2><ul class="rnk-comp-lista rnk-comp-lista-produtos-associados"><li> <a href="#"> <img width="50" height="50" src="'+
-        document.querySelector(".shopping .img-product img").getAttribute('src')
-         +'" alt="'+
-         document.querySelector(".shopping .produto-titulo").getAttribute('title')
-         +'"><div><p class="text-truncate">'+
-         document.querySelector(".shopping .produto-titulo h3").innerHTML
-         +'</p><p class="rnk-produto-adicionado-preco-do-produto"><b>'+
-         document.querySelector(".shopping .valor-por").innerHTML
-         +'</b></p></div></a> </li></ul></div></div><div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="4" aria-valuemin="0" aria-valuemax="100"></div></div></div></div></div></div></div>'
+        var dropdown = '<div class="aviso-comprado" style="display: none;"><div id="open-modal-produto-adicionado" class="rnk-comp-modal rnk-comp-modal-navegacao in" tabindex="-1" aria-hidden="false"><div class="col-12"><div class="rnk-modal-main"><div class="rnk-modal-content"><div class="rnk-container-notificacao-produto-adicionado"><div class="text-group"><h2>Produto adicionado ao carrinho</h2><ul class="rnk-comp-lista rnk-comp-lista-produtos-associados"><li> <a href="#"> <img width="50" height="50" src="' +
+            document.querySelector(".shopping .img-product img").getAttribute('src')
+            + '" alt="' +
+            document.querySelector(".shopping .produto-titulo").getAttribute('title')
+            + '"><div><p class="text-truncate">' +
+            document.querySelector(".shopping .produto-titulo h3").innerHTML
+            + '</p><p class="rnk-produto-adicionado-preco-do-produto"><b>' +
+            document.querySelector(".shopping .valor-por").innerHTML
+            + '</b></p></div></a> </li></ul></div></div><div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="4" aria-valuemin="0" aria-valuemax="100"></div></div></div></div></div></div></div>'
         var inner = document.querySelector("#mini-cart .cp-dropdown").innerHTML + dropdown;
         document.querySelector("#mini-cart .cp-dropdown").innerHTML = inner
 

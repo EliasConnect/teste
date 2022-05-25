@@ -164,3 +164,60 @@ a{
 .rnk-comp-lista-produtos-associados>li>a>div>p{
     margin: 0!important;
 }
+
+.mensagem{
+    font-size: 11px;
+    /* display: flex;
+    justify-content: space-between; */
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 13px;
+    flex-direction: row-reverse;
+    border: 1px solid rgb(255, 166, 100);
+    border-radius: 5px;
+    position: relative;
+    bottom: 100px;
+    right: 9px;
+    background-color: rgb(255, 220, 195);
+    padding: 5px 10px 6px 50px;
+    width: 200px;
+    gap: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    box-shadow: rgb(0 0 0 / 30%) 0px 0px 12px;
+    box-shadow: 0 0 12px rgb(0 0 0 / 30%);
+    animation: msgAnime .15s ease-in-out;
+}
+
+.mensagem .triangle{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 50%;
+    bottom: -8px;
+    transform: translate(-50%) rotate(45deg);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 166, 100, 0) rgb(255, 166, 100) rgb(255, 166, 100) rgba(255, 166, 100, 0);
+    border-image: initial;
+    border-top-left-radius: 100%;
+    background-image: linear-gradient(-45deg, rgb(255, 220, 195) 60%, transparent);
+}
+
+.mensagem .alert{
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    text-align: center;
+    line-height: 22px;
+    font-weight: 900;
+    font-size: 16px;
+    color: rgb(255, 166, 100);
+    padding: 2px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid rgb(255, 166, 100);
+}
